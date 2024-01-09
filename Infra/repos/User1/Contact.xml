@@ -13,12 +13,12 @@
   <mdm:dataQualitySteps></mdm:dataQualitySteps>
   <mdm:recordTitle>
     <mdm:titleParameters>
-	  <mdm:parameter uniqueId="RESORTID"/>
-	  <mdm:parameter staticConstant=" - "/>
-	  <mdm:parameter uniqueId="NAME"/>
-	  <mdm:parameter staticConstant=" - "/>
-	  <mdm:parameter uniqueId="PARENTID"/>
-	</mdm:titleParameters>
+  <mdm:parameter uniqueId="RESORTID"/>
+  <mdm:parameter staticConstant=" - "/>
+  <mdm:parameter uniqueId="NAME"/>
+  <mdm:parameter staticConstant=" - "/>
+  <mdm:parameter uniqueId="PARENTID"/>
+</mdm:titleParameters>
   </mdm:recordTitle>
   <mdm:matchRules>
   <mdm:matchRule topLevelOperator="AND">
