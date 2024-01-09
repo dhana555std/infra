@@ -1,0 +1,17 @@
+{
+  "database": {
+    "id": "database",
+    "name": "databasedffr",
+    "url": "http://database.com"
+  },
+  "force": {
+    "id": "force",
+    "name": "force1345",
+    "url": "http://force.com"
+  },
+  "sales": {
+    "id": "sales",
+	"name": "sales",
+    "url": "http://sales.com"
+  }
+}

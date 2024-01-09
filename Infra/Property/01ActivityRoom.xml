@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdm:CreateModelRequest xmlns:mdm="http://mdm.api.platform.boomi.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <mdm:name>ActivityType</mdm:name>
+   <mdm:fields>
+      <mdm:field name="activity_type_id" repeatable="false" required="true" type="INTEGER" uniqueId="ACTIVITY_TYPE_ID" />
+      <mdm:field name="activity_type" repeatable="false" required="true" type="ENUMERATION" uniqueId="ACTIVITY_TYPE">
+         <mdm:value>PO</mdm:value>
+         <mdm:value>PPE</mdm:value>
+         <mdm:value>PPNE</mdm:value>
+      </mdm:field>
+      <mdm:field name="activity_type_additional_info" repeatable="false" required="false" type="STRING" uniqueId="ACTIVITY_TYPE_ADDITIONAL_INFO" minLength="1" maxLength="100" />
+      <mdm:field name="created_by" repeatable="false" required="true" type="STRING" uniqueId="CREATED_BY" minLength="1" maxLength="100" />
+      <mdm:field name="updated_by" repeatable="false" required="true" type="STRING" uniqueId="UPDATED_BY" minLength="1" maxLength="100" />
+   </mdm:fields>
+   <mdm:sources>
+      <mdm:source id="maxxton" type="Contribute" allowMultipleLinks="" default="" />
+   </mdm:sources>
+   <mdm:dataQualitySteps />
+   <mdm:recordTitle>
+      <mdm:titleParameters>
+         <mdm:parameter uniqueId="ACTIVITY_TYPE_ID" />
+         <mdm:parameter staticConstant="-" />
+         <mdm:parameter uniqueId="ACTIVITY_TYPE" />
+      </mdm:titleParameters>
+   </mdm:recordTitle>
+   <mdm:matchRules>
+      <mdm:matchRule topLevelOperator="AND">
+         <mdm:simpleExpression>
+            <mdm:fieldUniqueId>ACTIVITY_TYPE_ID</mdm:fieldUniqueId>
+         </mdm:simpleExpression>
+         <mdm:simpleExpression>
+            <mdm:fieldUniqueId>ACTIVITY_TYPE</mdm:fieldUniqueId>
+         </mdm:simpleExpression>
+      </mdm:matchRule>
+   </mdm:matchRules>
+   <mdm:tags />
+</mdm:CreateModelRequest>

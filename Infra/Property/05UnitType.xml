@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdm:CreateModelRequest xmlns:mdm="http://mdm.api.platform.boomi.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <mdm:name>UnitType</mdm:name>
+   <mdm:fields>
+        <mdm:field name="unit_type_id" repeatable="false" required="true" type="INTEGER" uniqueId="UNIT_TYPE_ID"/>
+        <mdm:field name="unit_type" repeatable="false" required="true" type="ENUMERATION" uniqueId="UNIT_TYPE">
+            <mdm:value>PO</mdm:value>
+            <mdm:value>PPE</mdm:value>
+            <mdm:value>PPNE</mdm:value>
+        </mdm:field>
+        <mdm:field name="unit_type_additional_info" repeatable="false" required="false" type="STRING" uniqueId="UNIT_TYPE_ADDITIONAL_INFO" minLength="1" maxLength="100"/>
+        <mdm:field name="created_by" repeatable="false" required="true" type="STRING" uniqueId="CREATED_BY" minLength="1" maxLength="100"/>
+        <mdm:field name="updated_by" repeatable="false" required="true" type="STRING" uniqueId="UPDATED_BY" minLength="1" maxLength="100"/>
+    </mdm:fields>
+    <mdm:sources>
+        <mdm:source id="maxxton" type="Contribute" allowMultipleLinks="false" default="false">
+            <mdm:inbound>
+                <mdm:createApproval required="false"/>
+                <mdm:updateApproval required="false"/>
+                <mdm:endDateApproval required="false"/>
+            </mdm:inbound>
+        </mdm:source>
+    </mdm:sources>
+   <mdm:dataQualitySteps />
+    <mdm:recordTitle>
+        <mdm:titleParameters>
+            <mdm:parameter uniqueId="UNIT_TYPE"/>
+            <mdm:parameter staticConstant="-"/>
+            <mdm:parameter uniqueId="UNIT_TYPE_ID"/>
+        </mdm:titleParameters>
+    </mdm:recordTitle>
+  <mdm:matchRules>
+        <mdm:matchRule topLevelOperator="AND">
+            <mdm:simpleExpression>
+                <mdm:fieldUniqueId>UNIT_TYPE</mdm:fieldUniqueId>
+            </mdm:simpleExpression>
+            <mdm:simpleExpression>
+                <mdm:fieldUniqueId>UNIT_TYPE_ID</mdm:fieldUniqueId>
+            </mdm:simpleExpression>
+        </mdm:matchRule>
+    </mdm:matchRules>
+   <mdm:tags />
+</mdm:CreateModelRequest>
