@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdm:CreateModelRequest xmlns:mdm="http://mdm.api.platform.boomi.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <mdm:name>ResortUnitRoom</mdm:name>
+       <mdm:fields>
+        <mdm:field name="resort_unit_room_id" repeatable="false" required="true" type="INTEGER" uniqueId="RESORT_UNIT_ROOM_ID"/>
+        <mdm:field name="resort_unit_room_number_of_bedrooms" repeatable="false" required="true" type="INTEGER" uniqueId="RESORT_UNIT_ROOM_NUMBER_OF_BEDROOMS"/>
+        <mdm:field name="resort_unit_room_number_of_beds" repeatable="false" required="true" type="INTEGER" uniqueId="RESORT_UNIT_ROOM_NUMBER_OF_BEDS"/>
+        <mdm:field name="resort_unit_room_amenity_level" repeatable="false" required="false" type="INTEGER" uniqueId="RESORT_UNIT_ROOM_AMENITY_LEVEL"/>
+        <mdm:field name="resort_unit_room_number_of_person" repeatable="false" required="true" type="INTEGER" uniqueId="RESORT_UNIT_ROOM_NUMBER_OF_PERSON"/>
+        <mdm:field name="resort_unit_room_number_of_bathrooms" repeatable="false" required="true" type="INTEGER" uniqueId="RESORT_UNIT_ROOM_NUMBER_OF_BATHROOMS"/>
+        <mdm:field name="resort_unit_room_baby_capacity" repeatable="false" required="true" type="INTEGER" uniqueId="RESORT_UNIT_ROOM_BABY_CAPACITY"/>
+        <mdm:field name="resort_unit_room_pet_capacity" repeatable="false" required="false" type="INTEGER" uniqueId="RESORT_UNIT_ROOM_PET_CAPACITY"/>
+        <mdm:field name="resort_unit_room_preference_addon" repeatable="false" required="false" type="STRING" uniqueId="RESORT_UNIT_ROOM_PREFERENCE_ADDON" minLength="1" maxLength="100"/>
+        <mdm:field name="resort_unit_room_adjacent_preference_addon" repeatable="false" required="false" type="STRING" uniqueId="RESORT_UNIT_ROOM_ADJACENT_PREFERENCE_ADDON" minLength="1" maxLength="100"/>
+        <mdm:field name="resort_unit_room_miscellaneous_preference_addon" repeatable="false" required="false" type="STRING" uniqueId="RESORT_UNIT_ROOM_MISCELLANEOUS_PREFERENCE_ADDON" minLength="1" maxLength="100"/>
+        <mdm:field name="created_by" repeatable="false" required="true" type="STRING" uniqueId="CREATED_BY" minLength="1" maxLength="100"/>
+        <mdm:field name="updated_by" repeatable="false" required="true" type="STRING" uniqueId="UPDATED_BY" minLength="1" maxLength="100"/>
+        <mdm:field name="resort_accomodation_unit_id" repeatable="false" required="true" type="REFERENCE" uniqueId="RESORT_ACCOMODATION_UNIT_ID" incomingReferenceIntegrity="false" outgoingReferenceIntegrity="true" referenceUniverseId="${ResortAccomodationUnit}"/>
+        <mdm:field name="room_type_id" repeatable="false" required="true" type="REFERENCE" uniqueId="ROOM_TYPE_ID" incomingReferenceIntegrity="false" outgoingReferenceIntegrity="true" referenceUniverseId="${RoomType}"/>
+    </mdm:fields>
+    <mdm:sources>
+        <mdm:source id="maxxton" type="Contribute" allowMultipleLinks="false" default="false">
+            <mdm:inbound>
+                <mdm:createApproval required="false"/>
+                <mdm:updateApproval required="false"/>
+                <mdm:endDateApproval required="false"/>
+            </mdm:inbound>
+        </mdm:source>
+    </mdm:sources>
+    <mdm:dataQualitySteps/>
+    <mdm:recordTitle>
+        <mdm:titleParameters>
+            <mdm:parameter uniqueId="RESORT_UNIT_ROOM_ID"/>
+        </mdm:titleParameters>
+    </mdm:recordTitle>
+    <mdm:matchRules>
+        <mdm:matchRule topLevelOperator="AND">
+            <mdm:simpleExpression>
+                <mdm:fieldUniqueId>RESORT_UNIT_ROOM_ID</mdm:fieldUniqueId>
+            </mdm:simpleExpression>
+        </mdm:matchRule>
+    </mdm:matchRules>
+    <mdm:tags/>
+</mdm:CreateModelRequest>

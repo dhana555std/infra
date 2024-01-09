@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdm:CreateModelRequest xmlns:mdm="http://mdm.api.platform.boomi.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <mdm:name>Language</mdm:name>
+    <mdm:fields>
+        <mdm:field name="language_id" repeatable="false" required="true" type="INTEGER" uniqueId="LANGUAGE_ID"/>
+        <mdm:field name="language_name" repeatable="false" required="true" type="ENUMERATION" uniqueId="LANGUAGE_NAME">
+            <mdm:value>PO</mdm:value>
+            <mdm:value>PPE</mdm:value>
+            <mdm:value>PPNE</mdm:value>
+        </mdm:field>
+        <mdm:field name="created_by" repeatable="false" required="true" type="STRING" uniqueId="CREATED_BY" minLength="1" maxLength="100"/>
+        <mdm:field name="updated_by" repeatable="false" required="true" type="STRING" uniqueId="UPDATED_BY" minLength="1" maxLength="100"/>
+    </mdm:fields>
+    <mdm:sources>
+        <mdm:source id="maxxton" type="Contribute" allowMultipleLinks="false" default="false">
+            <mdm:inbound>
+                <mdm:createApproval required="false"/>
+                <mdm:updateApproval required="false"/>
+                <mdm:endDateApproval required="false"/>
+            </mdm:inbound>
+        </mdm:source>
+    </mdm:sources>
+   <mdm:dataQualitySteps />
+    <mdm:recordTitle>
+        <mdm:titleParameters>
+            <mdm:parameter uniqueId="LANGUAGE_NAME"/>
+            <mdm:parameter staticConstant="-"/>
+            <mdm:parameter uniqueId="LANGUAGE_ID"/>
+        </mdm:titleParameters>
+    </mdm:recordTitle>
+   <mdm:matchRules>
+        <mdm:matchRule topLevelOperator="AND">
+            <mdm:simpleExpression>
+                <mdm:fieldUniqueId>LANGUAGE_NAME</mdm:fieldUniqueId>
+            </mdm:simpleExpression>
+            <mdm:simpleExpression>
+                <mdm:fieldUniqueId>LANGUAGE_ID</mdm:fieldUniqueId>
+            </mdm:simpleExpression>
+        </mdm:matchRule>
+    </mdm:matchRules>
+   <mdm:tags />
+</mdm:CreateModelRequest>

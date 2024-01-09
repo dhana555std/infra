@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdm:CreateModelRequest xmlns:mdm="http://mdm.api.platform.boomi.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <mdm:name>Resort</mdm:name>
+    <mdm:fields>
+        <mdm:field name="resort_id" repeatable="false" required="true" type="INTEGER" uniqueId="RESORT_ID"/>
+        <mdm:field name="resort_type" repeatable="false" required="true" type="ENUMERATION" uniqueId="RESORT_TYPE">
+            <mdm:value>PO</mdm:value>
+            <mdm:value>PPE</mdm:value>
+            <mdm:value>PPNE</mdm:value>
+        </mdm:field>
+        <mdm:field name="resort_name" repeatable="false" required="true" type="STRING" uniqueId="RESORT_NAME" minLength="1" maxLength="100"/>
+        <mdm:field name="resort_code" repeatable="false" required="true" type="STRING" uniqueId="RESORT_CODE" minLength="1" maxLength="100"/>
+        <mdm:field name="resort_number" repeatable="false" required="true" type="INTEGER" uniqueId="RESORT_NUMBER"/>
+        <mdm:field name="resort_internal_number" repeatable="false" required="true" type="INTEGER" uniqueId="RESORT_INTERNAL_NUMBER"/>
+        <mdm:field name="resort_path" repeatable="false" required="true" type="STRING" uniqueId="RESORT_PATH" minLength="1" maxLength="100"/>
+        <mdm:field name="resort_subjects" repeatable="false" required="true" type="STRING" uniqueId="RESORT_SUBJECTS" minLength="1" maxLength="100"/>
+        <mdm:field name="resort_priority" repeatable="false" required="true" type="INTEGER" uniqueId="RESORT_PRIORITY"/>
+        <mdm:field name="resort_bookable" repeatable="false" required="true" type="BOOLEAN" uniqueId="RESORT_BOOKABLE"/>
+        <mdm:field name="resort_not_bookable_from" repeatable="false" required="false" type="DATE" uniqueId="RESORT_NOT_BOOKABLE_FROM"/>
+        <mdm:field name="resort_not_bookable_to" repeatable="false" required="false" type="DATE" uniqueId="RESORT_NOT_BOOKABLE_TO"/>
+        <mdm:field name="resort_description" repeatable="false" required="false" type="STRING" uniqueId="RESORT_DESCRIPTION" maxLength="100"/>
+        <mdm:field name="resort_short_description" repeatable="false" required="false" type="STRING" uniqueId="RESORT_SHORT_DESCRIPTION" minLength="1" maxLength="100"/>
+        <mdm:field name="resort_status" repeatable="false" required="false" type="ENUMERATION" uniqueId="RESORT_STATUS">
+            <mdm:value>PO</mdm:value>
+            <mdm:value>PPE</mdm:value>
+            <mdm:value>PPNE</mdm:value>
+        </mdm:field>
+        <mdm:field name="created_by" repeatable="false" required="true" type="STRING" uniqueId="CREATED_BY" minLength="1" maxLength="100"/>
+        <mdm:field name="updated_by" repeatable="false" required="true" type="STRING" uniqueId="UPDATED_BY" minLength="1" maxLength="100"/>
+        <mdm:field name="resort_owner_id" repeatable="false" required="true" type="REFERENCE" uniqueId="RESORT_OWNER_ID" incomingReferenceIntegrity="false" outgoingReferenceIntegrity="true" referenceUniverseId="${ResortOwner}"/>
+    </mdm:fields>
+    <mdm:sources>
+        <mdm:source id="maxxton" type="Contribute" allowMultipleLinks="false" default="false">
+            <mdm:inbound>
+                <mdm:createApproval required="false"/>
+                <mdm:updateApproval required="false"/>
+                <mdm:endDateApproval required="false"/>
+            </mdm:inbound>
+        </mdm:source>
+    </mdm:sources>
+    <mdm:dataQualitySteps/>
+    <mdm:recordTitle>
+        <mdm:titleParameters>
+            <mdm:parameter uniqueId="RESORT_NAME"/>
+            <mdm:parameter staticConstant="-"/>
+            <mdm:parameter uniqueId="RESORT_ID"/>
+        </mdm:titleParameters>
+    </mdm:recordTitle>
+    <mdm:matchRules>
+        <mdm:matchRule topLevelOperator="AND">
+            <mdm:simpleExpression>
+                <mdm:fieldUniqueId>RESORT_NAME</mdm:fieldUniqueId>
+            </mdm:simpleExpression>
+            <mdm:simpleExpression>
+                <mdm:fieldUniqueId>RESORT_CODE</mdm:fieldUniqueId>
+            </mdm:simpleExpression>
+            <mdm:simpleExpression>
+                <mdm:fieldUniqueId>RESORT_ID</mdm:fieldUniqueId>
+            </mdm:simpleExpression>
+        </mdm:matchRule>
+    </mdm:matchRules>
+    <mdm:tags/>
+</mdm:CreateModelRequest>
