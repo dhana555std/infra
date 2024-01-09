@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mdm:CreateModelRequest xmlns:mdm="http://mdm.api.platform.boomi.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-   <mdm:name>ResortOwner</mdm:name>
+   <mdm:name>ResortOwners</mdm:name>
    <mdm:fields>
         <mdm:field name="resort_owner_id" repeatable="false" required="true" type="INTEGER" uniqueId="RESORT_OWNER_ID"/>
         <mdm:field name="resort_owner_name" repeatable="false" required="true" type="STRING" uniqueId="RESORT_OWNER_NAME" minLength="1" maxLength="100"/>
