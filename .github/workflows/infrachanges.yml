@@ -2,8 +2,8 @@ name: Change
 
 on:
   push:
-    paths-ignore:
-      - '.github/workflows/**'
+    # paths-ignore:
+    #   - '.github/workflows/**'
 
 jobs:
   test:
@@ -31,7 +31,7 @@ jobs:
           echo "${{ steps.abc.outputs.added_modified }}"
           
       - name: Changes
-        uses: tj-actions/changed-files@v41
+      - uses: tj-actions/changed-files@v41
         id: changed-files
         with:
-          json: ''
+          dir_names_deleted_files_include_only_deleted_dirs: '''
