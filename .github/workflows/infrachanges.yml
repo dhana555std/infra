@@ -2,6 +2,8 @@ name: Change
 
 on:
   push:
+    branches:
+      - main
     paths-ignore:
       - '.github/workflows/**'
 
@@ -29,9 +31,4 @@ jobs:
           echo "${{ steps.abc.outputs.modified }}"
           echo "Added+Modified:"
           echo "${{ steps.abc.outputs.added_modified }}"
-          
-      - name: Changes
-        uses: tj-actions/changed-files@v41
-        id: changed-files
-        with:
-          json: ''
+
