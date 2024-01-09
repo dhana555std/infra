@@ -1,5 +1,5 @@
 <mdm:CreateModelRequest xmlns:mdm="http://mdm.api.platform.boomi.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <mdm:name>Contact1</mdm:name>
+  <mdm:name>Contact</mdm:name>
   <mdm:fields>
     <mdm:field name="ResortId" repeatable="false" required="true" type="INTEGER" uniqueId="RESORTID" minLength="0" maxLength="100" regex=""/>
     <mdm:field name="AmenityManagerId" repeatable="false" required="false" type="STRING" uniqueId="AMENITYMANAGERID" minLength="0" maxLength="100" regex=""/>
