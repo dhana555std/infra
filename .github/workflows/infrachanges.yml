@@ -31,9 +31,4 @@ jobs:
           echo "${{ steps.abc.outputs.modified }}"
           echo "Added+Modified:"
           echo "${{ steps.abc.outputs.added_modified }}"
-          
-      - name: Changes
-        uses: tj-actions/changed-files@v41
-        id: changed-files
-        with:
-          dir_names_deleted_files_include_only_deleted_dirs: ''
+
