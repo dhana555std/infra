@@ -16,7 +16,6 @@ jobs:
 
     - name: Add Files
       run: |
-        touch God.txt
         echo God is great >> God.txt
         cat God.txt
 
