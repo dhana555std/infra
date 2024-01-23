@@ -1,0 +1,27 @@
+name: Push Files to Repository
+
+on:
+  workflow_dispatch: # This allows manual triggering of the action
+
+jobs:
+  push_changes:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2 # This action checks out your repository
+
+    - name: Add Files
+      run: |
+        # Add commands to copy or create the files you want to push
+        # For example:
+        # cp path/to/your/local/file.txt path/to/your/repo/directory
+
+    - name: Commit and Push
+      run: |
+        git config --global user.email "you@example.com"
+        git config --global user.name "Your Name"
+        git add .
+        git commit -m "Add files" # Replace with your commit message
+        # Push changes to the repository
+        git push origin HEAD
