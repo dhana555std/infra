@@ -9,19 +9,23 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2 # This action checks out your repository
+      uses: actions/checkout@v4
 
     - name: Add Files
       run: |
         # Add commands to copy or create the files you want to push
         # For example:
         # cp path/to/your/local/file.txt path/to/your/repo/directory
+        touch God.txt
+        echo God is great >> God.txt
+        cat God.txt
 
     - name: Commit and Push
       run: |
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
-        git add .
-        git commit -m "Add files" # Replace with your commit message
-        # Push changes to the repository
-        git push origin HEAD
+        # git config --global user.email "you@example.com"
+        # git config --global user.name "Your Name"
+        # git add .
+        # git commit -m "Add files" # Replace with your commit message
+        # # Push changes to the repository
+        # git push origin HEAD
+        git branch
