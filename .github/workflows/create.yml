@@ -10,6 +10,9 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GithubAction }}
 
     - name: Add Files
       run: |
@@ -23,5 +26,4 @@ jobs:
         git config user.name "Dhana"
         git add .
         git commit -m "Add files"
-        # Push changes to the repository
         git push origin HEAD
