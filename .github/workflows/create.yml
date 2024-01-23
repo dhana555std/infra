@@ -19,8 +19,8 @@ jobs:
 
     - name: Commit and Push
       run: |
-        # git config user.email "dhanapathi.marepalli@gmail.com"
-        # git config user.name "Dhana"
+        git config user.email "dhanapathi.marepalli@gmail.com"
+        git config user.name "Dhana"
         git add .
         git commit -m "Add files"
         # Push changes to the repository
