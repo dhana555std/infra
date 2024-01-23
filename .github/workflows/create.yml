@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        token: ${{ secrets.GithubAction }}
+        token: ${{ secrets.GITHUBACTION }}
 
     - name: Add Files
       run: |
