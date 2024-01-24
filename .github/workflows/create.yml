@@ -16,6 +16,7 @@ jobs:
 
     - name: Add Files
       run: |
+        exit -1
         echo God is great >> God.txt
         cat God.txt
 
